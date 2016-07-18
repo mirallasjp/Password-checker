@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Password checker</title>
+  <script src="js/pwchecker.js"></script>
+</head>
+
+<body onload="writeMin()">
+  <h1>Password checker</h1>
+  <h2>Choose a security level for your password</h2>
+  <p>
+    <input type="radio" name="security" value="level1" onclick="setLvl()" checked> Level 1: At least one character.<br>
+    <input type="radio" name="security" value="level2" onclick="setLvl()"> Level 2: Minimum <span id="minchar"></span> characters.<br>
+    <input type="radio" name="security" value="level3" onclick="setLvl()"> Level 3: Level 2 + letters and numbers.<br>
+    <input type="radio" name="security" value="level4" onclick="setLvl()"> Level 4: Level 3 + at least one upper and one lowercase letter.<br>
+    <input type="radio" name="security" value="level5" onclick="setLvl()"> Level 5: Level 4 + at least one special characters (~!@#$%^&#38;*_-+=`|\(){}[]:;"'&#60;&#62;,.?/).<br>
+  </p>
+  <h2>Enter your password</h2>
+  <p>
+    <table>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" id="pwbox1" oninput="check()"></td>
+        <td><span id="status1"></span></td>
+      </tr>
+      <tr>
+        <td>Confirm:</td>
+        <td><input type="password" id="pwbox2" oninput="check()" disabled></td>
+        <td><span id="status2"></span></td>
+      </tr>
+    </table>
+  </p>
+  <input type="submit" value="Submit" onclick="verify()">
+</body>
+
+</html>
